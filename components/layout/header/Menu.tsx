@@ -41,7 +41,7 @@ export default function Menu({
 
 			{/* Menu Panel */}
 			<div
-				className={`fixed right-0 top-0 h-full bg-black z-40 transition-transform duration-300 ease-out
+				className={`fixed right-0 top-0 h-full bg-background z-40 transition-transform duration-300 ease-out
           ${isOpen ? "translate-x-0" : "translate-x-full"}
           w-full md:w-96 md:top-24 md:h-auto md:rounded-l-2xl md:shadow-2xl
         `}
@@ -61,7 +61,7 @@ export default function Menu({
 								<a
 									href={item.href}
 									onClick={onClose}
-									className="text-white text-3xl md:text-2xl font-bold hover:text-muted-foreground transition-colors inline-block md:block md:py-3"
+									className="text-primary text-3xl md:text-2xl font-bold hover:text-muted-foreground transition-colors inline-block md:block md:py-3"
 								>
 									{item.label}
 								</a>

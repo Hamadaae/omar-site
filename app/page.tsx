@@ -3,7 +3,7 @@ import HeroSection from "@/components/layout/hero/HeroSection";
 
 export default function Home() {
 	return (
-		<main className="border border-gray-400 rounded-2xl mx-auto w-[90%]">
+		<main className="bg-background mx-auto w-[85%]">
 			<Header />
 			<HeroSection />
 		</main>

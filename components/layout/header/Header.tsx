@@ -30,7 +30,7 @@ export default function Header() {
 		}
   `}
 			>
-				<div className="max-w-350 mx-auto px-6 lg:px-12">
+				<div className="w-[85%] mx-auto px-6 lg:px-12">
 					<div className="flex items-center justify-between h-20">
 						{/* Logo/Brand */}
 						<div className="flex items-center gap-2">
