@@ -1,6 +1,7 @@
 import ServiceCard from "./ServiceCard";
 import StatItem from "./StatItem";
 import Image from "next/image";
+import RolesSlider from "./RolesSlider";
 
 export default function HeroSection() {
 	const stats = [
@@ -36,7 +37,7 @@ export default function HeroSection() {
 		<section className="relative bg-background pt-20 overflow-hidden">
 			{/* Background Image Layer */}
 			<div className="pointer-events-none absolute top-20 left-1/2 -translate-x-1/2 z-0 display-none lg:block">
-				<div className="relative w-72 h-105 lg:w-80 lg:h-130 overflow-hidden rounded-b-full bg-muted shadow-2xl">
+				<div className="relative w-72 h-105 lg:w-80 lg:h-130 overflow-hidden rounded-b-full bg-surface-subtle shadow-2xl">
 					<Image
 						src="/MarwanMamdouh.jpg"
 						alt="Profile"
@@ -48,34 +49,26 @@ export default function HeroSection() {
 			</div>
 
 			{/* Content */}
-			<div className="relative z-10 max-w-350 mx-auto px-6 lg:px-12 py-12 lg:py-24">
+			<div className="relative z-10 w-full mx-auto px-6 lg:px-12 py-12">
 				{/* Hero Grid */}
 				<div className="grid grid-cols-2 lg:grid-cols-[1fr_auto] gap-12 lg:gap-16 items-start mb-24">
 					{/* Left - Text */}
-					<div className="space-y-8 max-w-xl">
+					<div className="space-y-8 max-w-md">
 						<div>
-							<p className="text-lg mb-4 text-muted-foreground">
-								Hey. I&apos;m Solt,
+							<p className="text-xl text-muted-foreground capitalize">
+								hey. i&apos;m omar,
 							</p>
-							<h1 className="space-y-1">
-								<span className="block text-6xl md:text-7xl lg:text-8xl font-bold leading-none">
-									A UI/UX
-								</span>
-								<span className="block text-6xl md:text-7xl lg:text-8xl font-serif italic leading-none">
-									& Brand
-								</span>
-								<span className="block text-6xl md:text-7xl lg:text-8xl font-bold leading-none">
-									DESIGNER
-								</span>
-							</h1>
+							<div className="flex items-start justify-center h-22">
+								<RolesSlider />
+							</div>
 						</div>
 
-						<p className="text-base text-muted-foreground max-w-md leading-relaxed">
-							Transforming ideas into stunning visuals – UI/UX and brand design
-							that captivates, engages, and delivers results.
+						<p className="text-base capitalize text-muted-foreground max-w-sm leading-relaxed">
+							let&apos;s unlock the full potential of Microsoft azure, cloud
+							subscription and microsoft services
 						</p>
 
-						<button className="group inline-flex items-center gap-3 px-6 py-3 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors rounded-full">
+						<button className="group inline-flex items-center gap-3 px-3 py-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors rounded-full">
 							<span className="text-sm uppercase tracking-wider font-medium">
 								Contact Me
 							</span>
@@ -98,7 +91,7 @@ export default function HeroSection() {
 					</div>
 
 					{/* Right - Stats (overlapping image) */}
-					<div className="flex flex-col">
+					<div className="flex flex-col py-5">
 						{stats.map((stat) => (
 							<StatItem
 								key={stat.label}

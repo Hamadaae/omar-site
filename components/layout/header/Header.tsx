@@ -25,8 +25,8 @@ export default function Header() {
 				className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
     ${
 			isScrolled
-				? "bg-background/80 backdrop-blur-sm shadow-sm"
-				: "bg-background"
+				? "bg-background/80 backdrop-blur-sm border-b border-border-subtle"
+				: "bg-background border-b border-transparent"
 		}
   `}
 			>
@@ -36,7 +36,7 @@ export default function Header() {
 						<div className="flex items-center gap-2">
 							<div className="w-2.5 h-2.5 bg-foreground rounded-full" />
 
-							<span className="text-lg font-bold uppercase tracking-tight">
+							<span className="text-lg font-bold uppercase tracking-tight text-foreground">
 								Dominic
 							</span>
 						</div>

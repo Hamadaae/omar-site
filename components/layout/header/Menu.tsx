@@ -41,9 +41,9 @@ export default function Menu({
 
 			{/* Menu Panel */}
 			<div
-				className={`fixed right-0 top-0 h-full bg-background z-40 transition-transform duration-300 ease-out
+				className={`fixed right-0 top-0 h-full bg-surface z-40 transition-transform duration-300 ease-out
           ${isOpen ? "translate-x-0" : "translate-x-full"}
-          w-full md:w-96 md:top-24 md:h-auto md:rounded-l-2xl md:shadow-2xl
+          w-full md:w-96 md:top-24 md:h-auto md:rounded-l-2xl md:shadow-2xl md:bg-background
         `}
 			>
 				<nav className="flex-1 flex items-center justify-center md:items-start md:justify-start md:py-8">
