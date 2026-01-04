@@ -1,6 +1,6 @@
 "use client";
 
-import { MailIcon, Phone, Tag } from "lucide-react";
+import { MailIcon, Tag } from "lucide-react";
 import { BsPersonVcard } from "react-icons/bs";
 import {
 	InputGroup,
@@ -21,11 +21,13 @@ import { contactFormSchema } from "@/zodSchemas/ContactUsForm";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
+import { useTranslations } from "next-intl";
 import z from "zod";
 
 type ContactFormValues = z.infer<typeof contactFormSchema>;
 
 export default function ContactFrom() {
+	const t = useTranslations("Contact.form");
 	const form = useForm<ContactFormValues>({
 		resolver: zodResolver(contactFormSchema),
 		defaultValues: {
@@ -73,7 +75,7 @@ export default function ContactFrom() {
 							<FormControl>
 								<InputGroup>
 									<InputGroupInput
-										placeholder="full time (required)"
+										placeholder={t("fullNamePlaceholder")}
 										className="capitalize focus-visible:ring-offset-0 focus-visible:border-primary bg-transparent data-invalid:border-destructive"
 										{...field}
 									/>
@@ -96,7 +98,7 @@ export default function ContactFrom() {
 									<InputGroup>
 										<InputGroupInput
 											type="email"
-											placeholder="Enter your email (required)"
+											placeholder={t("emailPlaceholder")}
 											className="focus-visible:ring-offset-0 focus-visible:border-primary bg-transparent data-invalid:border-destructive"
 											{...field}
 										/>
@@ -118,7 +120,7 @@ export default function ContactFrom() {
 								<FormControl>
 									<InputGroup>
 										<InputGroupInput
-											placeholder="Subject (required)"
+											placeholder={t("subjectPlaceholder")}
 											className="focus-visible:ring-offset-0 focus-visible:border-primary bg-transparent data-invalid:border-destructive"
 											{...field}
 										/>
@@ -141,13 +143,13 @@ export default function ContactFrom() {
 							<FormControl>
 								<InputGroup>
 									<InputGroupTextarea
-										placeholder="Enter your message (required)"
+										placeholder={t("messagePlaceholder")}
 										className="min-h-10 focus-visible:ring-offset-0 focus-visible:border-primary bg-transparent data-invalid:border-destructive"
 										{...field}
 									/>
 									<InputGroupAddon align="block-end">
 										<InputGroupText className="text-muted-foreground text-xs">
-											{charactersLeft} characters left
+											{charactersLeft} {t("charactersLeft")}
 										</InputGroupText>
 									</InputGroupAddon>
 								</InputGroup>
@@ -162,7 +164,9 @@ export default function ContactFrom() {
 					className="w-full rounded-full"
 					disabled={form.formState.isSubmitting}
 				>
-					{form.formState.isSubmitting ? "Sending..." : "Send Message"}
+					{form.formState.isSubmitting
+						? t("submittingButton")
+						: t("submitButton")}
 				</Button>
 			</form>
 		</Form>

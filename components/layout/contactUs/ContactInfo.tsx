@@ -1,22 +1,25 @@
 import { PiMicrosoftTeamsLogo } from "react-icons/pi";
 import { FaUpwork } from "react-icons/fa6";
 import { SiFiverr } from "react-icons/si";
+import { getTranslations } from "next-intl/server";
 
-function ContactInfo() {
+async function ContactInfo() {
+	const t = await getTranslations("Contact");
+
 	return (
 		<div className="flex flex-col justify-center">
 			<h2 className="text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight text-foreground capitalize">
-				contact me
+				{t("heading")}
 			</h2>
 
 			<p className="text-muted-foreground text-md my-3">
-				Email: <br />
+				{t("email")} <br />
 				<span className="text-lg">
 					<strong>marwanabdalmagied@gmail.com</strong>
 				</span>
 			</p>
 			<p className="text-muted-foreground text-lg my-3">
-				you can find me in:{" "}
+				{t("locations")}{" "}
 				<span className="flex gap-6 text-2xl">
 					<PiMicrosoftTeamsLogo />
 					<FaUpwork />
@@ -24,10 +27,8 @@ function ContactInfo() {
 				</span>
 			</p>
 			<p className="text-muted-foreground text-md my-3">
-				working hours: <br />
-				<span>
-					monday - friday <br /> 7 AM - 3 PM UTC
-				</span>
+				{t("workingHours")} <br />
+				<span>{t("hours")}</span>
 			</p>
 		</div>
 	);

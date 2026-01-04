@@ -2,8 +2,11 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ContactFrom from "./ContactFrom";
 import BookAppointment from "./BookAppointment";
 import ContactInfo from "./ContactInfo";
+import { getTranslations } from "next-intl/server";
 
-export default function ContactUs() {
+export default async function ContactUs() {
+	const t = await getTranslations("Contact.tabs");
+
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-2 mx-auto gap-3 my-10 lg:gap-6">
 			{/* left side */}
@@ -14,10 +17,10 @@ export default function ContactUs() {
 				<div className="flex items-center">
 					<TabsList className="mx-auto rounded-full">
 						<TabsTrigger value="message" className="rounded-full">
-							Send a Message
+							{t("message")}
 						</TabsTrigger>
 						<TabsTrigger value="appointment" className="rounded-full">
-							Book Appointment
+							{t("appointment")}
 						</TabsTrigger>
 					</TabsList>
 				</div>

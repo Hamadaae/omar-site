@@ -1,19 +1,22 @@
 "use client";
 
 import { useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 // Menu Component - Responsive
 export default function Menu({
 	isOpen,
 	onClose,
 }: Readonly<{ isOpen: boolean; onClose: () => void }>) {
+	const t = useTranslations("Navigation");
+
 	const menuItems = [
-		{ label: "Home", href: "#home" },
-		{ label: "About", href: "#about" },
-		{ label: "Services", href: "#services" },
-		{ label: "Portfolio", href: "#portfolio" },
-		{ label: "Experience", href: "#experience" },
-		{ label: "Contact", href: "#contact" },
+		{ label: t("home"), href: "#home" },
+		{ label: t("about"), href: "#about" },
+		{ label: t("services"), href: "#services" },
+		{ label: t("portfolio"), href: "#portfolio" },
+		{ label: t("experience"), href: "#experience" },
+		{ label: t("contact"), href: "#contact" },
 	];
 
 	useEffect(() => {

@@ -1,5 +1,5 @@
 import { defineRouting } from "next-intl/routing";
-// import { createSharedPathnamesNavigation } from "next-intl/navigation";
+import { createNavigation } from "next-intl/navigation";
 
 export const routing = defineRouting({
 	// A list of all locales that are supported
@@ -12,8 +12,8 @@ export const routing = defineRouting({
 	localePrefix: "always",
 });
 
-// // Lightweight wrappers around Next.js' navigation APIs
-// export const { Link, redirect, usePathname, useRouter } =
-// 	createSharedPathnamesNavigation(routing);
+// Lightweight wrappers around Next.js' navigation APIs
+export const { Link, redirect, usePathname, useRouter } =
+	createNavigation(routing);
 
 export type Locale = (typeof routing.locales)[number];

@@ -5,6 +5,87 @@
 	},
 	"Navigation": {
 		"home": "Startseite",
-		"about": "Über uns"
+		"about": "Über uns",
+		"services": "Dienstleistungen",
+		"portfolio": "Portfolio",
+		"experience": "Erfahrung",
+		"contact": "Kontakt"
+	},
+	"Header": {
+		"brand": "Dominic"
+	},
+	"Hero": {
+		"greeting": "hey. ich bin omar,",
+		"subtitle": "Lassen Sie uns das volle Potenzial von Microsoft Azure, Cloud-Abonnement und Microsoft-Diensten freisetzen",
+		"ctaButton": "Kontaktieren Sie mich",
+		"stats": [
+			{
+				"value": "5+",
+				"label": "Jahre Erfahrung"
+			},
+			{
+				"value": "80+",
+				"label": "Projekte abgeliefert"
+			},
+			{
+				"value": "90%",
+				"label": "Kundenzufriedenheit"
+			},
+			{
+				"value": "20",
+				"label": "Kunden weltweit"
+			}
+		],
+		"services": [
+			{
+				"title": "BENUTZERFREIE GESTALTUNG",
+				"description": "Entwerfen Sie intuitive und barrierefreie Erfahrungen, die auf Ihr Publikum zugeschnitten sind."
+			},
+			{
+				"title": "MARKENIDENTITÄT & STRATEGIE",
+				"description": "Erstellung kohärenter visueller Systeme, die Ihre Marke unvergesslich definieren."
+			},
+			{
+				"title": "RESPONSIVE & MODERNES UI",
+				"description": "Pixelgenaue Designs, die für alle Geräte optimiert sind."
+			},
+			{
+				"title": "NAHTLOSE PROTOTYPEN",
+				"description": "Interaktive Prototypen zum Leben vor der Entwicklung."
+			}
+		]
+	},
+	"Crafting": {
+		"heading": "Schaffung bedeutungsvoller Marken und intuitiver Erfahrungen",
+		"bio": [
+			"Hallo, ich bin Omar, ein UI/UX- und Brand-Designer, der leidenschaftlich daran arbeitet, visuell ansprechende und benutzerfreundliche digitale Erlebnisse zu schaffen.",
+			"Mit einem feinen Blick für Ästhetik und einem tiefen Verständnis des Benutzerverhaltens entwerfe ich Marken und Schnittstellen, die nicht nur gut aussehen, sondern auch bei Zielgruppen ankommen.",
+			"Ob ich eine Markenidentität von Grund auf aufbaue oder ein digitales Produkt für nahtlose Benutzerfreundlichkeit verfeinere, ich kombiniere Strategie, Kreativität und Funktionalität, um Ideen zum Leben zu erwecken. Lassen Sie uns zusammenarbeiten und etwas Außergewöhnliches schaffen."
+		]
+	},
+	"Contact": {
+		"heading": "kontaktieren sie mich",
+		"email": "E-Mail:",
+		"locations": "du kannst mich finden in:",
+		"workingHours": "arbeitszeiten:",
+		"hours": "montag - freitag 7 AM - 3 PM UTC",
+		"tabs": {
+			"message": "Eine Nachricht senden",
+			"appointment": "Termin buchen"
+		},
+		"appointment": {
+			"heading": "Termin buchen",
+			"description": "Vereinbaren Sie ein Treffen in Ihrem eigenen Tempo",
+			"button": "Zur Buchung"
+		},
+		"form": {
+			"fullNamePlaceholder": "vollständiger Name (erforderlich)",
+			"emailPlaceholder": "Geben Sie Ihre E-Mail ein (erforderlich)",
+			"subjectPlaceholder": "Betreff (erforderlich)",
+			"messagePlaceholder": "Geben Sie Ihre Nachricht ein (erforderlich)",
+			"charactersLeft": "Zeichen verbleibend",
+			"submitButton": "Nachricht senden",
+			"submittingButton": "Wird gesendet..."
+		}
 	}
 }

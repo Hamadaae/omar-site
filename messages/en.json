@@ -5,6 +5,87 @@
 	},
 	"Navigation": {
 		"home": "Home",
-		"about": "About"
+		"about": "About",
+		"services": "Services",
+		"portfolio": "Portfolio",
+		"experience": "Experience",
+		"contact": "Contact"
+	},
+	"Header": {
+		"brand": "Dominic"
+	},
+	"Hero": {
+		"greeting": "hey. i'm omar,",
+		"subtitle": "let's unlock the full potential of Microsoft azure, cloud subscription and microsoft services",
+		"ctaButton": "Contact Me",
+		"stats": [
+			{
+				"value": "5+",
+				"label": "Years Experience"
+			},
+			{
+				"value": "80+",
+				"label": "Projects Delivered"
+			},
+			{
+				"value": "90%",
+				"label": "Client Satisfaction"
+			},
+			{
+				"value": "20",
+				"label": "Clients Worldwide"
+			}
+		],
+		"services": [
+			{
+				"title": "USER-CENTERED DESIGN",
+				"description": "Designing intuitive and accessible experiences tailored for your audience."
+			},
+			{
+				"title": "BRAND IDENTITY & STRATEGY",
+				"description": "Creating cohesive visual systems that define your brand unforgettably."
+			},
+			{
+				"title": "RESPONSIVE & MODERN UI",
+				"description": "Pixel perfect designs optimized for all devices."
+			},
+			{
+				"title": "SEAMLESS PROTOTYPING",
+				"description": "Interactive prototypes to bring ideas to life before development."
+			}
+		]
+	},
+	"Crafting": {
+		"heading": "Crafting meaningful brands & intuitive experiences",
+		"bio": [
+			"Hey, I'm Omar, a UI/UX and brand designer passionate about creating visually compelling and user-friendly digital experiences.",
+			"With a keen eye for aesthetics and a deep understanding of user behavior, I design brands and interfaces that not only look great but also resonate with audiences.",
+			"Whether it's building a brand identity from the ground up or refining a digital product for seamless usability, I blend strategy, creativity, and functionality to bring ideas to life. Let's collaborate and make something extraordinary."
+		]
+	},
+	"Contact": {
+		"heading": "contact me",
+		"email": "Email:",
+		"locations": "you can find me in:",
+		"workingHours": "working hours:",
+		"hours": "monday - friday 7 AM - 3 PM UTC",
+		"tabs": {
+			"message": "Send a Message",
+			"appointment": "Book Appointment"
+		},
+		"appointment": {
+			"heading": "Book an Appointment",
+			"description": "Schedule a meeting at your convenience",
+			"button": "Go to Booking"
+		},
+		"form": {
+			"fullNamePlaceholder": "full time (required)",
+			"emailPlaceholder": "Enter your email (required)",
+			"subjectPlaceholder": "Subject (required)",
+			"messagePlaceholder": "Enter your message (required)",
+			"charactersLeft": "characters left",
+			"submitButton": "Send Message",
+			"submittingButton": "Sending..."
+		}
 	}
 }

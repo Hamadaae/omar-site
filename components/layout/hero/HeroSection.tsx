@@ -2,34 +2,34 @@ import ServiceCard from "./ServiceCard";
 import StatItem from "./StatItem";
 import Image from "next/image";
 import RolesSlider from "./RolesSlider";
+import { getTranslations } from "next-intl/server";
 
-export default function HeroSection() {
+export default async function HeroSection() {
+	const t = await getTranslations("Hero");
+
 	const stats = [
-		{ value: "5+", label: "Years Experience" },
-		{ value: "80+", label: "Projects Delivered" },
-		{ value: "90%", label: "Client Satisfaction" },
-		{ value: "20", label: "Clients Worldwide" },
+		{ value: t("stats.0.value"), label: t("stats.0.label") },
+		{ value: t("stats.1.value"), label: t("stats.1.label") },
+		{ value: t("stats.2.value"), label: t("stats.2.label") },
+		{ value: t("stats.3.value"), label: t("stats.3.label") },
 	];
 
 	const services = [
 		{
-			title: "USER-CENTERED DESIGN",
-			description:
-				"Designing intuitive and accessible experiences tailored for your audience.",
+			title: t("services.0.title"),
+			description: t("services.0.description"),
 		},
 		{
-			title: "BRAND IDENTITY & STRATEGY",
-			description:
-				"Creating cohesive visual systems that define your brand unforgettably.",
+			title: t("services.1.title"),
+			description: t("services.1.description"),
 		},
 		{
-			title: "RESPONSIVE & MODERN UI",
-			description: "Pixel perfect designs optimized for all devices.",
+			title: t("services.2.title"),
+			description: t("services.2.description"),
 		},
 		{
-			title: "SEAMLESS PROTOTYPING",
-			description:
-				"Interactive prototypes to bring ideas to life before development.",
+			title: t("services.3.title"),
+			description: t("services.3.description"),
 		},
 	];
 
@@ -41,7 +41,7 @@ export default function HeroSection() {
 				<div className="space-y-8">
 					<div>
 						<p className="text-3xl text-muted-foreground capitalize">
-							hey. i&apos;m omar,
+							{t("greeting")}
 						</p>
 						<div className="flex items-start justify-center h-32">
 							<RolesSlider />
@@ -49,8 +49,7 @@ export default function HeroSection() {
 					</div>
 
 					<p className="flex-1 text-lg md:text-xl capitalize text-muted-foreground leading-relaxed">
-						let&apos;s unlock the full potential of Microsoft azure, cloud
-						subscription and microsoft services
+						{t("subtitle")}
 					</p>
 
 					{/* Right - Stats (overlapping image) */}
@@ -66,7 +65,7 @@ export default function HeroSection() {
 					<div className="mx-auto flex justify-center items-center md:justify-start">
 						<button className="group inline-flex items-center gap-3 px-3 py-2 bg-primary text-primary-foreground hover:bg-primary/90 transition-colors rounded-full">
 							<span className="text-sm uppercase tracking-wider font-medium">
-								Contact Me
+								{t("ctaButton")}
 							</span>
 							<div className="flex items-center justify-center w-9 h-9 rounded-full bg-background text-primary transition-transform group-hover:translate-x-1">
 								<svg
