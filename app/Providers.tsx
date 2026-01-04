@@ -1,11 +1,19 @@
-// app/providers.tsx
 "use client";
 
-import { ThemeProvider } from "next-themes";
 import { ReactNode } from "react";
+import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Locale, NextIntlClientProvider } from "next-intl";
 
-export function Providers({ children }: Readonly<{ children: ReactNode }>) {
+export function Providers({
+	children,
+	messages,
+	locale,
+}: Readonly<{
+	children: ReactNode;
+	messages: Record<string, any>;
+	locale: Locale;
+}>) {
 	return (
 		<ThemeProvider
 			attribute="class"
@@ -13,7 +21,9 @@ export function Providers({ children }: Readonly<{ children: ReactNode }>) {
 			enableSystem
 			disableTransitionOnChange
 		>
-			<TooltipProvider>{children}</TooltipProvider>
+			<NextIntlClientProvider locale={locale} messages={messages}>
+				<TooltipProvider>{children}</TooltipProvider>
+			</NextIntlClientProvider>
 		</ThemeProvider>
 	);
 }
