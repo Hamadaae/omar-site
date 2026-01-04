@@ -1,6 +1,4 @@
-"use client";
-
-import { useState, useEffect } from "react";
+import TextType from "@/components/ui/TextType";
 
 export default function RolesSlider() {
 	const roles = [
@@ -10,33 +8,33 @@ export default function RolesSlider() {
 		"power apps specialist",
 	];
 
-	const [currentRole, setCurrentRole] = useState(0);
-
-	useEffect(() => {
-		const roleInterval = setInterval(() => {
-			setCurrentRole((prev) => (prev + 1) % roles.length);
-		}, 5000);
-		return () => clearInterval(roleInterval);
-	}, [roles.length]);
-
 	return (
 		<div className="flex items-start relative w-full h-full">
-			<div className="relative w-full">
-				{roles.map((role, index) => (
-					<h1
-						key={role}
-						className={`text-4xl lg:text-6xl font-bold italic capitalize absolute left-0 transition-all duration-700 leading-tight ${
-							currentRole === index
-								? "opacity-100 translate-y-0"
-								: index < currentRole
-								? "opacity-0 -translate-y-8"
-								: "opacity-0 translate-y-8"
-						}`}
-						style={{ wordWrap: "break-word", whiteSpace: "normal" }}
-					>
-						{role}
-					</h1>
-				))}
+			{/* Replace the old role mapping logic with the TextType component.
+        This uses the typing and deleting animation defined in your TextType.tsx.
+        
+        The container div's height (h-full) is critical because the parent component 
+        (HeroSection) gives it a fixed height (h-32) to contain the changing text.
+      */}
+			<div className="relative w-full h-full">
+				{/* The TextType component will now handle the cycling/animation */}
+				<TextType
+					// Pass the array of roles as the text prop
+					text={roles}
+					// Use a large font size to match the original style (e.g., in a span or div)
+					as="span"
+					className="text-4xl lg:text-6xl font-bold italic capitalize leading-tight"
+					// Configure the animation timings
+					typingSpeed={75} // Speed of typing (ms per char)
+					pauseDuration={2500} // Pause before deleting (ms) - slightly less than 5000ms interval for effect
+					deletingSpeed={30} // Speed of deleting (ms per char)
+					loop={true} // Cycle through the roles continuously
+					showCursor={true}
+					cursorCharacter="_" // A common character for a coding context
+					// Optional: Add a transition color for a nicer effect
+					// textColors={} // Tailwind 'emerald', 'blue', 'amber', 'red' equivalents or any colors you prefer
+					// ["#10B981", "#3B82F6", "#F59E0B", "#EF4444"]
+				/>
 			</div>
 		</div>
 	);

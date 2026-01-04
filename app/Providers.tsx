@@ -22,7 +22,11 @@ export function Providers({
 			enableSystem
 			disableTransitionOnChange
 		>
-			<NextIntlClientProvider locale={locale} messages={messages}>
+			<NextIntlClientProvider
+				timeZone={"Africa/Cairo"}
+				locale={locale}
+				messages={messages}
+			>
 				<TooltipProvider>{children}</TooltipProvider>
 			</NextIntlClientProvider>
 		</ThemeProvider>
