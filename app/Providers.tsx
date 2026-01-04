@@ -3,7 +3,8 @@
 import { ReactNode } from "react";
 import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { Locale, NextIntlClientProvider } from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
+import { Locale } from "@/i18n/routing";
 
 export function Providers({
 	children,

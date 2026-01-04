@@ -27,10 +27,10 @@ export default async function RootLayout({
 	params,
 }: Readonly<{
 	children: ReactNode;
-	params: Promise<{ locale: Locale }>;
+	params: Promise<{ locale: string }>;
 }>) {
 	// Ensure that the incoming `locale` is valid
-	const { locale } = await params; // Awaiting params is required in Next.js 15+
+	const { locale } = (await params) as { locale: Locale }; // Awaiting params is required in Next.js 15+
 
 	if (!routing.locales.includes(locale)) {
 		notFound();
