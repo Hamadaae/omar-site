@@ -25,7 +25,7 @@ export default function RolesSlider() {
 				{roles.map((role, index) => (
 					<h1
 						key={role}
-						className={`text-4xl lg:text-5xl font-bold italic capitalize absolute left-0 transition-all duration-700 leading-tight ${
+						className={`text-4xl lg:text-6xl font-bold italic capitalize absolute left-0 transition-all duration-700 leading-tight ${
 							currentRole === index
 								? "opacity-100 translate-y-0"
 								: index < currentRole

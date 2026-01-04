@@ -30,8 +30,8 @@ export default function Header() {
 		}
   `}
 			>
-				<div className="w-[85%] mx-auto px-6 lg:px-12">
-					<div className="flex items-center justify-between h-20">
+				<div className="w-[80%] mx-auto">
+					<div className="flex items-center justify-between py-2">
 						{/* Logo/Brand */}
 						<div className="flex items-center gap-2">
 							<div className="w-2.5 h-2.5 bg-foreground rounded-full" />

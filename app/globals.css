@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-	--color-background: #F9F9F9;
+	--color-background: #d1d2cc;
 	--color-foreground: #1a1a1a;
 	--color-surface: #ffffff;
 	--color-surface-subtle: #f5f3f0;

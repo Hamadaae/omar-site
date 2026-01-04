@@ -4,7 +4,7 @@ export default function ServiceCard({
 	description,
 }: Readonly<{ title: string; description: string }>) {
 	return (
-		<div className="space-y-2 lg:border-r border-border-subtle last:border-r-0">
+		<div className="space-y-2 lg:border-r border-border-subtle last:border-r-0 px-2.5">
 			<h3 className="text-xs sm:text-sm font-bold uppercase tracking-tight text-foreground">
 				{title}
 			</h3>

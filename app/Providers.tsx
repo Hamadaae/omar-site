@@ -2,10 +2,10 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
+import { ReactNode } from "react";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
-export function Providers({
-	children,
-}: Readonly<{ children: React.ReactNode }>) {
+export function Providers({ children }: Readonly<{ children: ReactNode }>) {
 	return (
 		<ThemeProvider
 			attribute="class"
@@ -13,7 +13,7 @@ export function Providers({
 			enableSystem
 			disableTransitionOnChange
 		>
-			{children}
+			<TooltipProvider>{children}</TooltipProvider>
 		</ThemeProvider>
 	);
 }
