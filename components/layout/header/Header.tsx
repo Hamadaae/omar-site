@@ -1,64 +1,126 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { ModeToggle } from "@/components/theme/ModeToggle";
-import MenuButton from "./MenuButton";
-import Menu from "./Menu";
-import LocaleSwitch from "../LocaleSwitch"; // <--- 1. Import the new component
+import LocaleSwitch from "../LocaleSwitch";
+import CardNav, { CardNavProps, CardNavItem } from "@/components/ui/CardNav"; // <--- Import the CardNav component
+import { GoArrowUpRight } from "react-icons/go"; // Assuming you kept the react-icons dependency
 
-// Header Component
-export default function Header() {
+// A simple placeholder array for your actual navigation content
+const navItems: CardNavItem[] = [
+	{
+		label: "Services",
+		bgColor: "#2E5559", // Dark Teal
+		textColor: "#F0F0F0", // Light Gray
+		links: [
+			{
+				label: "Web Development",
+				href: "/services/web",
+				ariaLabel: "Go to Web Development services",
+			},
+			{
+				label: "Mobile Apps",
+				href: "/services/mobile",
+				ariaLabel: "Go to Mobile App services",
+			},
+			{
+				label: "Consulting",
+				href: "/services/consulting",
+				ariaLabel: "Go to Consulting services",
+			},
+		],
+	},
+	{
+		label: "About Us",
+		bgColor: "#7F4F24", // Burnt Orange/Brown
+		textColor: "#F0F0F0",
+		links: [
+			{
+				label: "Our Story",
+				href: "/about/story",
+				ariaLabel: "Learn about our story",
+			},
+			{ label: "Team", href: "/about/team", ariaLabel: "Meet the team" },
+			{
+				label: "Careers",
+				href: "/about/careers",
+				ariaLabel: "See job openings",
+			},
+		],
+	},
+	{
+		label: "Resources",
+		bgColor: "#52485C", // Deep Purple
+		textColor: "#F0F0F0",
+		links: [
+			{ label: "Blog", href: "/blog", ariaLabel: "Read our blog" },
+			{
+				label: "Case Studies",
+				href: "/case-studies",
+				ariaLabel: "View case studies",
+			},
+			{
+				label: "FAQ",
+				href: "/faq",
+				ariaLabel: "Find answers to frequently asked questions",
+			},
+		],
+	},
+];
+
+// Define a placeholder for your logo image path
+// You should replace this with the actual path to your logo image file.
+const LOGO_IMAGE_PATH = "/path/to/your/logo.svg";
+
+// --- Helper to adapt react-bits component for your needs ---
+
+// NOTE: We wrap CardNav inside a new component to pass the required props
+// and incorporate your other header elements (ModeToggle, LocaleSwitch).
+const CustomCardNavWrapper = () => {
 	const t = useTranslations("Header");
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [isScrolled, setIsScrolled] = useState(false);
 
-	useEffect(() => {
-		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 20);
-		};
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
-	}, []);
+	// If you don't have a logo image, you can use a placeholder for now
+	if (LOGO_IMAGE_PATH === "/path/to/your/logo.svg") {
+		console.warn("Please update LOGO_IMAGE_PATH in Header.tsx");
+	}
+
+	const cardNavProps: CardNavProps = {
+		logo: LOGO_IMAGE_PATH,
+		logoAlt: t("brand"),
+		items: navItems,
+		// Customization props (optional):
+		baseColor: "black", // Use Tailwind CSS background variable
+		menuColor: "bg-foreground", // Use Tailwind CSS foreground variable
+		buttonBgColor: "white",
+		buttonTextColor: "black",
+	};
 
 	return (
-		<>
-			<header
-				className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300
-    ${
-			isScrolled
-				? "bg-background/80 backdrop-blur-sm border-b border-border-subtle"
-				: "bg-background border-b border-transparent"
-		}
-    `}
-			>
-				<div className="w-[80%] mx-auto">
-					<div className="flex items-center justify-between py-2">
-						{/* Logo/Brand */}
-						<div className="flex items-center gap-2">
-							<div className="w-2.5 h-2.5 bg-foreground rounded-full" />
+		// The default CardNav component is ABSOLUTELY positioned and centered (top-[1.2em]).
+		// We add your other controls here.
+		// <div className="flex w-[80%] mx-auto py-2 items-center justify-end relative z-50">
+		// 	<div className="flex items-center justify-center gap-3">
+		// 		<LocaleSwitch />
+		// 		<ModeToggle />
+		// 	</div>
+		<CardNav {...cardNavProps} />
+		// </div>
+	);
+};
 
-							<span className="text-lg font-bold uppercase tracking-tight text-foreground">
-								{t("brand")}
-							</span>
-						</div>
+// Header Component (Your new main component)
+export default function Header() {
+	// NOTE: If you want the CardNav to be FIXED and FULL-WIDTH
+	// like your old header, you will need to significantly modify
+	// the positioning and styling within the CardNav component itself.
+	// For this migration, we are keeping its default centered, floating style.
 
-						<div className="flex items-center gap-3">
-							{/* Language Switch Button added here */}
-							<LocaleSwitch /> {/* <--- 2. Place the component */}
-							<ModeToggle />
-							{/* Menu Button */}
-							<MenuButton
-								isOpen={isMenuOpen}
-								onClick={() => setIsMenuOpen(!isMenuOpen)}
-							/>
-						</div>
-					</div>
-				</div>
-			</header>
+	// Optional: Re-introduce the scroll class if you want a fixed *top* element
+	// *around* the CardNav component, but the CardNav itself is built to float.
 
-			{/* Menu */}
-			<Menu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
-		</>
+	return (
+		<header className="fixed top-0 left-0 right-0 z-50">
+			<CustomCardNavWrapper />
+		</header>
 	);
 }
