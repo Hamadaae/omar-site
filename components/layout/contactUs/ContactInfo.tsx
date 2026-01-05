@@ -46,8 +46,10 @@ const ContactInfo = async () => {
 			</p>
 			<p className="text-muted-foreground text-md my-3">
 				{t("workingHours")}
-				<p className="ml-12">{t("days")}</p>
-				<p className="ml-12">{t("hours")}</p>
+				<br />
+				<span className="ml-12">{t("days")}</span>
+				<br />
+				<span className="ml-12">{t("hours")}</span>
 			</p>
 		</div>
 	);
