@@ -7,11 +7,15 @@ interface AnimateInProps {
 	className?: string;
 }
 
-export function AnimateIn({ children, className = "" }: AnimateInProps) {
+export function AnimateIn({
+	children,
+	className = "",
+}: Readonly<AnimateInProps>) {
 	const [isVisible, setIsVisible] = useState(false);
 
 	useEffect(() => {
-		setIsVisible(true);
+		const fun = async () => setIsVisible(true);
+		fun();
 	}, []);
 
 	return (

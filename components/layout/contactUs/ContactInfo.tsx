@@ -2,8 +2,10 @@ import { PiMicrosoftTeamsLogo } from "react-icons/pi";
 import { FaUpwork } from "react-icons/fa6";
 import { SiFiverr } from "react-icons/si";
 import { getTranslations } from "next-intl/server";
+import Link from "next/link";
+import EmailCopyLink from "../EmailCopyLink";
 
-async function ContactInfo() {
+const ContactInfo = async () => {
 	const t = await getTranslations("Contact");
 
 	return (
@@ -12,26 +14,43 @@ async function ContactInfo() {
 				{t("heading")}
 			</h2>
 
-			<p className="text-muted-foreground text-md my-3">
-				{t("email")} <br />
-				<span className="text-lg">
-					<strong>marwanabdalmagied@gmail.com</strong>
-				</span>
-			</p>
+			<EmailCopyLink emailLabel={t("email")} />
+
 			<p className="text-muted-foreground text-lg my-3">
 				{t("locations")}{" "}
-				<span className="flex gap-6 text-2xl">
-					<PiMicrosoftTeamsLogo />
-					<FaUpwork />
-					<SiFiverr />
+				<span className="flex gap-6 ml-12 text-2xl">
+					<Link
+						href={""}
+						target="_blank"
+						className="hover:scale-115 mouse-pointer"
+					>
+						<PiMicrosoftTeamsLogo />
+					</Link>
+					<Link
+						href={
+							"https://www.upwork.com/freelancers/~01fc9ca62a615e2f41?mp_source=share"
+						}
+						target="_blank"
+						className="hover:scale-115 mouse-pointer"
+					>
+						<FaUpwork />
+					</Link>
+					<Link
+						href={""}
+						target="_blank"
+						className="hover:scale-115 mouse-pointer"
+					>
+						<SiFiverr />
+					</Link>
 				</span>
 			</p>
 			<p className="text-muted-foreground text-md my-3">
-				{t("workingHours")} <br />
-				<span>{t("hours")}</span>
+				{t("workingHours")}
+				<p className="ml-12">{t("days")}</p>
+				<p className="ml-12">{t("hours")}</p>
 			</p>
 		</div>
 	);
-}
+};
 
 export default ContactInfo;

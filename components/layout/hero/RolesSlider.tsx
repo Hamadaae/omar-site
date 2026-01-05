@@ -31,9 +31,6 @@ export default function RolesSlider() {
 					loop={true} // Cycle through the roles continuously
 					showCursor={true}
 					cursorCharacter="_" // A common character for a coding context
-					// Optional: Add a transition color for a nicer effect
-					// textColors={} // Tailwind 'emerald', 'blue', 'amber', 'red' equivalents or any colors you prefer
-					// ["#10B981", "#3B82F6", "#F59E0B", "#EF4444"]
 				/>
 			</div>
 		</div>

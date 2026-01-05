@@ -55,7 +55,7 @@ export function TechSlider() {
 		if (!inner) return;
 
 		const step = (ts: number) => {
-			if (lastTsRef.current == null) lastTsRef.current = ts;
+			lastTsRef.current ??= ts;
 			const dt = Math.min(100, ts - lastTsRef.current); // clamp to avoid jumps on tab switch
 			lastTsRef.current = ts;
 

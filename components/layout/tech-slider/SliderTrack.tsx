@@ -8,7 +8,7 @@ interface SliderTrackProps {
 	currentIndex: number;
 }
 
-export function SliderTrack({ visibleLogos, currentIndex }: SliderTrackProps) {
+export function SliderTrack({ visibleLogos, currentIndex }: Readonly<SliderTrackProps>) {
 	return (
 		<div className="flex items-center justify-between gap-4">
 			{visibleLogos.map((logo, index) => (

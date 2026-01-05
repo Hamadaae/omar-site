@@ -68,7 +68,8 @@
 		"email": "Email:",
 		"locations": "you can find me in:",
 		"workingHours": "working hours:",
-		"hours": "monday - friday 7 AM - 3 PM UTC",
+		"days": "monday - friday",
+		"hours": "7 AM - 3 PM UTC",
 		"tabs": {
 			"message": "Send a Message",
 			"appointment": "Book Appointment"

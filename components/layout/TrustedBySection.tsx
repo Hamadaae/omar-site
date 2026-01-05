@@ -1,5 +1,3 @@
-"use client";
-
 import { TechSlider } from "./tech-slider/TechSlider";
 
 export default function App() {

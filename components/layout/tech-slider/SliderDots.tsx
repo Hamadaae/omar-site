@@ -1,6 +1,7 @@
 "use client";
 
 import { Logo } from "@/data/microsoft-logos";
+import { Button } from "@/components/ui/button";
 
 interface SliderDotsProps {
 	logos: Logo[];
@@ -12,11 +13,11 @@ export function SliderDots({
 	logos,
 	currentIndex,
 	onDotClick,
-}: SliderDotsProps) {
+}: Readonly<SliderDotsProps>) {
 	return (
 		<div className="flex justify-center gap-2 mt-6" aria-live="polite">
 			{logos.map((logo, index) => (
-				<button
+				<Button
 					key={logo.name}
 					onClick={() => onDotClick(index)}
 					className={`w-2 h-2 rounded-full transition-all duration-300 ${
