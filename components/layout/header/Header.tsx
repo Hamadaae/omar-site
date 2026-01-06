@@ -1,11 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { ModeToggle } from "@/components/theme/ModeToggle";
-import LocaleSwitch from "../LocaleSwitch";
 import CardNav, { CardNavProps, CardNavItem } from "@/components/ui/CardNav"; // <--- Import the CardNav component
-import { GoArrowUpRight } from "react-icons/go"; // Assuming you kept the react-icons dependency
-
 // A simple placeholder array for your actual navigation content
 const navItems: CardNavItem[] = [
 	{
@@ -72,11 +68,8 @@ const navItems: CardNavItem[] = [
 // You should replace this with the actual path to your logo image file.
 const LOGO_IMAGE_PATH = "/path/to/your/logo.svg";
 
-// --- Helper to adapt react-bits component for your needs ---
-
-// NOTE: We wrap CardNav inside a new component to pass the required props
-// and incorporate your other header elements (ModeToggle, LocaleSwitch).
-const CustomCardNavWrapper = () => {
+// Header Component (Your new main component)
+export default function Header() {
 	const t = useTranslations("Header");
 
 	// If you don't have a logo image, you can use a placeholder for now
@@ -89,38 +82,16 @@ const CustomCardNavWrapper = () => {
 		logoAlt: t("brand"),
 		items: navItems,
 		// Customization props (optional):
-		baseColor: "black", // Use Tailwind CSS background variable
-		menuColor: "bg-foreground", // Use Tailwind CSS foreground variable
-		buttonBgColor: "white",
-		buttonTextColor: "black",
+		// baseColor: "#4d4d4d", // Use Tailwind CSS background variable
+		// menuColor: "#d1d2cc", // Use Tailwind CSS foreground variable
+		// buttonBgColor: "#d1d2cc",
+		// buttonTextColor: "#0d0d0d",
+		className: "bg-foreground rounded-2xl",
 	};
 
 	return (
-		// The default CardNav component is ABSOLUTELY positioned and centered (top-[1.2em]).
-		// We add your other controls here.
-		// <div className="flex w-[80%] mx-auto py-2 items-center justify-end relative z-50">
-		// 	<div className="flex items-center justify-center gap-3">
-		// 		<LocaleSwitch />
-		// 		<ModeToggle />
-		// 	</div>
-		<CardNav {...cardNavProps} />
-		// </div>
-	);
-};
-
-// Header Component (Your new main component)
-export default function Header() {
-	// NOTE: If you want the CardNav to be FIXED and FULL-WIDTH
-	// like your old header, you will need to significantly modify
-	// the positioning and styling within the CardNav component itself.
-	// For this migration, we are keeping its default centered, floating style.
-
-	// Optional: Re-introduce the scroll class if you want a fixed *top* element
-	// *around* the CardNav component, but the CardNav itself is built to float.
-
-	return (
 		<header className="fixed top-0 left-0 right-0 z-50">
-			<CustomCardNavWrapper />
+			<CardNav {...cardNavProps} />
 		</header>
 	);
 }

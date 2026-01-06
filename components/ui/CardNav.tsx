@@ -164,33 +164,33 @@ const CardNav: React.FC<CardNavProps> = ({
 
 	return (
 		<div
-			className={`card-nav-container absolute left-1/2 -translate-x-1/2 w-[90%] max-w-250 z-99 top-[1em] ${className}`}
+			className={`card-nav-container absolute left-1/2 -translate-x-1/2 w-[80%] max-w-250 z-99 top-[0.5em] ${className}`}
 		>
 			<nav
 				ref={navRef}
 				className={`card-nav ${
 					isExpanded ? "open" : ""
-				} block h-15 p-0 rounded-full shadow-md relative overflow-hidden will-change-[height]`}
-				style={{ backgroundColor: baseColor }}
+				} block h-15 rounded-2xl shadow-xl relative overflow-hidden will-change-[height]`}
+				// style={{ backgroundColor: baseColor }}
 			>
 				<div className="card-nav-top absolute inset-x-0 top-0 h-15 flex items-center justify-between p-2 pl-[1.1rem] z-2">
 					<button
 						className={`hamburger-menu ${
 							isHamburgerOpen ? "open" : ""
-						} group h-full flex flex-col items-center justify-center cursor-pointer gap-1.5 order-2 md:order-0`}
+						} group h-full flex flex-col items-center justify-center cursor-pointer gap-1.5 order-2 md:order-0 `}
 						onClick={toggleMenu}
 						// role="button"
 						aria-label={isExpanded ? "Close menu" : "Open menu"}
 						tabIndex={0}
-						style={{ color: menuColor || "#000" }}
+						// style={{ color: menuColor || "#000" }}
 					>
 						<div
-							className={`hamburger-line w-7.5 h-0.5 bg-current transition-[transform,opacity,margin] duration-300 ease-linear origin-[50%_50%] ${
+							className={`hamburger-line w-7.5 h-0.5 bg-background transition-[transform,opacity,margin] duration-300 ease-linear origin-[50%_50%]  ${
 								isHamburgerOpen ? "translate-y-1 rotate-45" : ""
 							} group-hover:opacity-75`}
 						/>
 						<div
-							className={`hamburger-line w-7.5 h-0.5 bg-current transition-[transform,opacity,margin] duration-300 ease-linear origin-[50%_50%] ${
+							className={`hamburger-line w-7.5 h-0.5 bg-background transition-[transform,opacity,margin] duration-300 ease-linear origin-[50%_50%] ${
 								isHamburgerOpen ? "-translate-y-1 -rotate-45" : ""
 							} group-hover:opacity-75`}
 						/>
@@ -202,15 +202,15 @@ const CardNav: React.FC<CardNavProps> = ({
 							alt={logoAlt}
 							width={28}
 							height={28}
-							className="logo h-7"
+							className="logo h-7 w-7"
 						/>
 					</div>
 
 					<div className="flex justify-center items-center gap-6 mr-3">
 						<button
 							type="button"
-							className="card-nav-cta-button hidden md:inline-flex border-0 rounded-[calc(0.75rem-0.2rem)] p-1.5 items-center h-full font-medium cursor-pointer transition-colors duration-300"
-							style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+							className="card-nav-cta-button hidden md:inline-flex border-0 rounded-full -[calc(0.75rem-0.2rem)] p-1.5 px-2 items-center h-full font-medium cursor-pointer transition-colors duration-300 bg-background text-foreground"
+							// style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
 						>
 							Get Started
 						</button>

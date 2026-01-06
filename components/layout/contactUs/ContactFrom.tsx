@@ -65,7 +65,7 @@ export default function ContactFrom() {
 		<Form {...form}>
 			<form
 				onSubmit={form.handleSubmit(onSubmit)}
-				className="grid w-full gap-6 border rounded-xl p-5"
+				className="grid w-full gap-6 border border-foreground rounded-xl p-5"
 			>
 				<FormField
 					control={form.control}

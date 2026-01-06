@@ -15,7 +15,7 @@ export default async function ContactUs() {
 			{/* right side */}
 			<Tabs defaultValue="message">
 				<div className="flex items-center">
-					<TabsList className="mx-auto rounded-full">
+					<TabsList className="mx-auto rounded-full border border-foreground mb-6">
 						<TabsTrigger value="message" className="rounded-full">
 							{t("message")}
 						</TabsTrigger>
@@ -25,11 +25,11 @@ export default async function ContactUs() {
 					</TabsList>
 				</div>
 				{/* book appointment */}
-				<TabsContent value="appointment" className="mt-6">
+				<TabsContent value="appointment">
 					<BookAppointment />
 				</TabsContent>
 				{/* form */}
-				<TabsContent value="message" className="mt-6">
+				<TabsContent value="message">
 					<ContactFrom />
 				</TabsContent>
 			</Tabs>

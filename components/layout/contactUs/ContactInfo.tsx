@@ -18,7 +18,7 @@ const ContactInfo = async () => {
 
 			<p className="text-muted-foreground text-lg my-3">
 				{t("locations")}{" "}
-				<span className="flex gap-6 ml-12 text-2xl">
+				<span className="flex gap-6 text-2xl mt-2">
 					<Link
 						href={""}
 						target="_blank"
@@ -47,9 +47,11 @@ const ContactInfo = async () => {
 			<p className="text-muted-foreground text-md my-3">
 				{t("workingHours")}
 				<br />
-				<span className="ml-12">{t("days")}</span>
+				<span className="text-foreground">
+				<span>{t("days")}</span>
 				<br />
-				<span className="ml-12">{t("hours")}</span>
+				<span>{t("hours")}</span>
+				</span>
 			</p>
 		</div>
 	);

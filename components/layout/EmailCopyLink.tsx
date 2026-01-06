@@ -25,13 +25,13 @@ const EmailCopyLink = ({ emailLabel }: Readonly<{ emailLabel: string }>) => {
 	const mailtoLink = `mailto:${EMAIL_ADDRESS}`;
 
 	return (
-		<div className="grid">
+		<>
 			<p className="text-muted-foreground text-lg mt-3">
 				{/* The email label text (e.g., "Email") */}
 				{emailLabel}
 				<br />
 			</p>
-			<div className="ml-12 gap-6 flex w-full">
+			<div className="gap-6 flex w-full">
 				{/* Link to open the default email app */}
 				<a
 					href={mailtoLink}
@@ -54,7 +54,7 @@ const EmailCopyLink = ({ emailLabel }: Readonly<{ emailLabel: string }>) => {
 					)}
 				</button>
 			</div>
-		</div>
+		</>
 	);
 };
 

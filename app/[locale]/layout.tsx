@@ -19,7 +19,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 	title: "Omar AbdelMagied",
-	description: "Omar AbdelMagied's Portfolio",
+	description: "Omar consulting agency website",
+	alternates: {
+		canonical: "https://example.com",
+		languages: {
+			"en-US": "https://example.com/en-US",
+			"de-DE": "https://example.com/de-DE",
+		},
+	},
 };
 
 export default async function RootLayout({
@@ -30,7 +37,7 @@ export default async function RootLayout({
 	params: Promise<{ locale: string }>;
 }>) {
 	// Ensure that the incoming `locale` is valid
-	const { locale } = (await params) as { locale: Locale }; // Awaiting params is required in Next.js 15+
+	const { locale } = (await params) as { locale: Locale };
 
 	if (!routing.locales.includes(locale)) {
 		notFound();

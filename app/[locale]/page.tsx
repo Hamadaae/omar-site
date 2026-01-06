@@ -3,6 +3,7 @@ import HeroSection from "@/components/layout/hero/HeroSection";
 import TrustedBySection from "@/components/layout/TrustedBySection";
 import CraftingSection from "@/components/layout/CraftingSection";
 import ContactUs from "@/components/layout/contactUs/ContactUs";
+import Timeline from "@/components/ui/timeline";
 
 export default function Home() {
 	return (
@@ -11,6 +12,7 @@ export default function Home() {
 			<HeroSection />
 			<TrustedBySection />
 			<CraftingSection />
+			<Timeline />
 			<ContactUs />
 		</main>
 	);
