@@ -1,37 +1,50 @@
 "use client";
 
 import { Link, Locale, usePathname } from "@/i18n/routing";
-import { useLocale } from "next-intl"; // <-- Import useLocale from next-intl
+import { useLocale } from "next-intl";
+import { Button } from "@/components/ui/button";
+import {
+	DropdownMenu,
+	DropdownMenuContent,
+	DropdownMenuItem,
+	DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-// Define the two locales we support (Matches the routing.ts file)
-const allLocales = ["en", "de"];
+const allLocales: Locale[] = ["en", "de"];
 
-/**
- * A client component to switch the active locale.
- */
-export default function LocaleSwitch() {
-	const currentPathname = usePathname();
-	const currentLocale = useLocale(); // <-- Get the currently active locale ('en' or 'de')
-
-	// Find the target locale (the one not currently active)
-	const targetLocale = allLocales.find(
-		(locale) => locale !== currentLocale
-	) as Locale;
-
-	// Define the label for the button
-	const targetLabel = targetLocale.toUpperCase();
+const LocaleSwitch = () => {
+	const pathname = usePathname();
+	const currentLocale = useLocale();
 
 	return (
-		<Link
-			href={currentPathname}
-			locale={targetLocale} // Set the target locale here
-			aria-label={`Switch language to ${targetLabel}`}
-			// Added a key to force re-render if needed, though Link usually handles this
-			key={currentLocale}
-			className="text-sm font-semibold bg-background text-foreground transition-colors px-[0.55rem] py-[0.46rem] rounded-xl border border-border-subtle hover:bg-foreground hover:text-background"
-		>
-			{/* Display the label of the language we are switching TO */}
-			{targetLabel}
-		</Link>
+		<DropdownMenu>
+			<DropdownMenuTrigger asChild>
+				<Button
+					variant="outline"
+					size="sm"
+					className="rounded-xl font-semibold px-[0.54rem] py-[1.1rem] cursor-pointer"
+					aria-label="Change language"
+				>
+					{currentLocale.toUpperCase()}
+				</Button>
+			</DropdownMenuTrigger>
+
+			<DropdownMenuContent align="end" className="bg-background rounded-2xl">
+				{allLocales.map((locale) => (
+					<DropdownMenuItem
+						key={locale}
+						asChild
+						className="capitalize cursor-pointer rounded-xl"
+						disabled={locale === currentLocale}
+					>
+						<Link href={pathname} locale={locale} className="w-full">
+							{locale.toUpperCase()}
+						</Link>
+					</DropdownMenuItem>
+				))}
+			</DropdownMenuContent>
+		</DropdownMenu>
 	);
-}
+};
+
+export default LocaleSwitch;
