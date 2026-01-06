@@ -28,7 +28,7 @@ export default function LocaleSwitch() {
 			aria-label={`Switch language to ${targetLabel}`}
 			// Added a key to force re-render if needed, though Link usually handles this
 			key={currentLocale}
-			className="text-sm font-semibold bg-background text-foreground transition-colors p-2 rounded-xl border border-border-subtle hover:bg-foreground hover:text-background"
+			className="text-sm font-semibold bg-background text-foreground transition-colors px-[0.55rem] py-[0.46rem] rounded-xl border border-border-subtle hover:bg-foreground hover:text-background"
 		>
 			{/* Display the label of the language we are switching TO */}
 			{targetLabel}
