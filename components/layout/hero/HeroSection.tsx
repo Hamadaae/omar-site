@@ -34,9 +34,9 @@ export default async function HeroSection() {
 	];
 
 	return (
-		<section className="overflow-hidden w-full mt-4">
+		<section className="overflow-hidden w-full my-4">
 			{/* Hero Grid */}
-			<div className="grid gird-cols-1 lg:grid-cols-2 gap-3 my-15">
+			<div className="grid gird-cols-1 md:grid-cols-2 gap-3 my-10 md:my-15">
 				{/* Left - Text */}
 				<div className="space-y-8">
 					<div>

@@ -31,7 +31,7 @@ const EmailCopyLink = ({ emailLabel }: Readonly<{ emailLabel: string }>) => {
 				{emailLabel}
 				<br />
 			</p>
-			<div className="gap-6 flex w-full">
+			<div className="gap-3 md:gap-6 flex w-full">
 				{/* Link to open the default email app */}
 				<a
 					href={mailtoLink}
