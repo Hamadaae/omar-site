@@ -43,16 +43,16 @@ export default async function HeroSection() {
 						<p className="text-3xl text-muted-foreground capitalize">
 							{t("greeting")}
 						</p>
-						<div className="flex items-start justify-center h-32">
+
+						<div className="flex items-start justify-center mb-6 my-auto">
 							<RolesSlider />
 						</div>
 					</div>
 
-					<p className="flex-1 text-lg md:text-xl capitalize text-muted-foreground leading-relaxed">
+					<p className="flex-1 text-lg md:text-xl capitalize text-foreground leading-relaxed">
 						{t("subtitle")}
 					</p>
-
-					{/* Right - Stats (overlapping image) */}
+					{/* Stats */}
 					<div className="flex justify-evenly gap-3 items-stretch">
 						{stats.map((stat) => (
 							<StatItem
@@ -92,8 +92,6 @@ export default async function HeroSection() {
 							src="/MarwanMamdouh.jpg"
 							alt="Profile"
 							fill
-							// width={800}
-							// height={600}
 							className="object-cover"
 							priority
 						/>
