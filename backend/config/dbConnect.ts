@@ -50,13 +50,14 @@ export const connectDB = async (): Promise<Mongoose> => {
 
     cache.promise = mongoose
       .connect(MONGODB_URI, {
+        dbName: "omar-site", // Explicitly use omar-site database to match better-auth
         bufferCommands: false,
         maxPoolSize: 10,
         serverSelectionTimeoutMS: 5000,
         socketTimeoutMS: 45000,
       })
       .then((m) => {
-        console.log("[MongoDB] Connected successfully");
+        console.log("[MongoDB] Connected successfully to omar-site database");
         return m;
       });
   }
